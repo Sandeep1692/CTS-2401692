@@ -96,7 +96,7 @@
 //Console.WriteLine($"Class Average: {classAverage:F2}");
 
 #endregion
-
+#region Automatic Rank Calculation
 int numStudents = 5;
 int numSubjects = 5;
 string[] subjects = { "Maths", "Science", "English", "Social", "History" };
@@ -174,3 +174,4 @@ while (studentIndex < numStudents)
 Console.WriteLine($"Highest Average: {highestAverage:F2}");
 Console.WriteLine($"Class Total: {classTotal}");
 Console.WriteLine($"Class Average: {classAverage:F2}");
+#endregion
