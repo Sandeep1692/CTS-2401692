@@ -301,6 +301,7 @@
 #endregion
 
 #region shop
+using System;
 
 void PrintWelcomeMessage()
 {
@@ -465,12 +466,12 @@ void UpdateStock(string[] products, int[] stock, int productCount)
     int productNumber = int.Parse(Console.ReadLine()) - 1;
     if (productNumber >= 0 && productNumber < productCount)
     {
-        Console.WriteLine($"Enter the new stock quantity for {products[productNumber]}:");
-        int newStock = int.Parse(Console.ReadLine());
-        if (newStock >= 0)
+        Console.WriteLine($"Enter the additional stock quantity for {products[productNumber]}:");
+        int additionalStock = int.Parse(Console.ReadLine());
+        if (additionalStock >= 0)
         {
-            stock[productNumber] = newStock;
-            Console.WriteLine($"Stock updated for {products[productNumber]} to {newStock}");
+            stock[productNumber] += additionalStock;
+            Console.WriteLine($"Stock updated for {products[productNumber]} to {stock[productNumber]}");
         }
         else
         {
@@ -614,10 +615,10 @@ void ShopOwnerMenu(ref string[] products, ref int[] stock, ref double[] prices, 
 
 PrintWelcomeMessage();
 
-string[] products = { };
-int[] stock = { };
-double[] prices = { };
-int productCount = 0;
+string[] products = { "Apple", "Banana", "Orange" };
+int[] stock = { 50, 100, 80 };
+double[] prices = { 10.0, 5.0, 8.0 };
+int productCount = 3;
 
 while (true)
 {
