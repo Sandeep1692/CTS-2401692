@@ -11,4 +11,4 @@
     [Repository Link](https://github.com/Sandeep1692/TeamTerminal-s-E-Commerce-Website-for-Restaurant-Project)
 
 ## Points
-- **Total Points:** 24+1
+- **Total Points:** 24+1+3+1
