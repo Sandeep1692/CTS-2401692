@@ -23,12 +23,7 @@
   - **Repository Link:** [TeamTerminal Project Repo](https://github.com/Sandeep1692/TeamTerminal-s-E-Commerce-Website-for-Restaurant-Project)
 
 ## Points Breakdown
-- **Total Points:** **41**
-  - **Initial Points:** 24  
-  - **Bonus Points:** 8  
-  - **Additional Points:** 3  
-  - **Extra Credit:** 6  
-- **Note:** The total includes all bonus and extra credit points.
+- **Total Points:** 50
 
 ## Project Summary
 Our team is developing an innovative **e-commerce platform** tailored specifically for restaurants. This project aims to:
