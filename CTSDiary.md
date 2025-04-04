@@ -34,10 +34,10 @@
 
 ### Links for Today
 
-1. [Free Foundational C# with Microsoft Certification | freeCodeCamp.org](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
-2. [CSharpForStudents/SOLIDPrinciples at main · Jay-study-nildana/CSharpForStudents](https://github.com/Jay-study-nildana/CSharpForStudents/tree/main/SOLIDPrinciples)
-3. [Completed ‘Developer Career Path’ — Microsoft Learn | by Jay (Vijayasimha BR) | Mar, 2025 | Medium](https://vijayasimhabr.medium.com/completed-developer-career-path-microsoft-learn-7a1b5720dc78)
-4. [Coding Tutor Tip 9 — Caveman Debugging | by Jay (Vijayasimha BR) | Medium](https://vijayasimhabr.medium.com/coding-tutor-tip-9-caveman-debugging-58369c1a6760)
+- [Free Foundational C# with Microsoft Certification | freeCodeCamp.org](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
+- [CSharpForStudents/SOLIDPrinciples at main · Jay-study-nildana/CSharpForStudents](https://github.com/Jay-study-nildana/CSharpForStudents/tree/main/SOLIDPrinciples)
+- [Completed ‘Developer Career Path’ — Microsoft Learn | by Jay (Vijayasimha BR) | Mar, 2025 | Medium](https://vijayasimhabr.medium.com/completed-developer-career-path-microsoft-learn-7a1b5720dc78)
+- [Coding Tutor Tip 9 — Caveman Debugging | by Jay (Vijayasimha BR) | Medium](https://vijayasimhabr.medium.com/coding-tutor-tip-9-caveman-debugging-58369c1a6760)
 
 ---
 
@@ -81,3 +81,49 @@
 
 - Ensure sensitive information, such as API keys, is encrypted or stored securely. Avoid committing them directly to version control. Use environment variables or secret management tools instead.
 - Example: Replace `API KEY NASA:- LzIH3vcTygRNA3L6IfrSMhUeMfeURMBrTq1hC8KJ` with an encrypted placeholder or reference to a secure storage location.
+
+---
+
+## 04 April 2025
+
+### Morning Session (Up to Lunch Time)
+
+1. **Writing Classes and Creating Objects**  
+    Revisit class creation and object instantiation, with a focus on the `var` keyword for type inference.
+2. **Web API Project**  
+    Continue developing the Web API project, integrating Swagger documentation and Postman testing.
+3. **Sharing Postman Collections**  
+    Learn how to share Postman collections effectively for team collaboration.
+4. **Interfaces, Inheritance, and Implementation**  
+    Dive deeper into object-oriented principles, exploring interfaces and inheritance.
+5. **Dependency Injection**  
+    Apply dependency injection techniques to improve code modularity and scalability.
+6. **SQL Fundamentals**  
+    Set up SQL Express, explore database concepts, and practice basic queries.
+
+---
+
+### After Lunch
+
+1. **Continue Learning**  
+    Work on any pending or future Udemy courses to expand knowledge.
+2. **Collaborative Session**  
+    Engage in doubt clearing, project planning, and code discussions to enhance understanding and teamwork.
+
+---
+
+### Links for the Day
+
+- [SQL Fundamentals | GitHub](https://github.com/Jay-study-nildana/Azure-CSharp-Corp-Trainer-Syllabus/tree/main/SQLFundamentals)
+- [Practice MS SQL Database with DC Comics Characters | Medium](https://vijayasimhabr.medium.com/practice-ms-sql-database-with-dc-comics-characters-d2d8c68025e1)
+- [Azure-CSharp-Corp-Trainer-Syllabus | GitHub Pages](https://jay-study-nildana.github.io/Azure-CSharp-Corp-Trainer-Syllabus/)
+- [BungieCord Blog | GitHub Pages](https://jay-study-nildana.github.io/BungieCordBlog/)
+
+---
+
+### Notes
+
+- Apply SQL concepts to practical scenarios, such as creating and querying databases.
+- Share Postman collections with the team for collaborative API testing.
+- Actively participate in discussions to clarify doubts and strengthen understanding.
+- Ensure all sensitive information is securely managed and not exposed in code or documentation.
