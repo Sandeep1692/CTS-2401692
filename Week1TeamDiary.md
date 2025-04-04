@@ -23,12 +23,17 @@
   - **Repository Link:** [TeamTerminal Project Repo](https://github.com/Sandeep1692/TeamTerminal-s-E-Commerce-Website-for-Restaurant-Project)
 
 ## Points Breakdown
-- **Total Points:** 50
+- **Total Points:** 45
 
 ## Project Summary
 Our team is developing an innovative **e-commerce platform** tailored specifically for restaurants. This project aims to:
-- Streamline restaurant operations.
-- Enhance customer experiences.
-- Provide a seamless and efficient ordering system.
+- **Streamline restaurant operations** by integrating inventory, order, and delivery management.
+- **Enhance customer experiences** through personalized recommendations and a user-friendly interface.
+- **Provide a seamless and efficient ordering system** with real-time updates and secure payment options.
+
+### Key Features
+- **Customizable Menus:** Restaurants can easily update their offerings.
+- **Real-Time Order Tracking:** Customers can track their orders from preparation to delivery.
+- **Analytics Dashboard:** Insights into sales, customer preferences, and operational efficiency.
 
 Stay tuned for exciting updates and progress reports as we bring this vision to life!
