@@ -31,13 +31,38 @@
 //        Console.WriteLine($"Lifespan: {Lifespan} years");
 //    }
 //}
+List<Crocodile> crocodiles = new List<Crocodile>();
+CrocodileCollectionProcessor processor = new CrocodileCollectionProcessor();
 
-Console.Write("Enter the number of crocodiles to collect: ");
-int n = int.Parse(Console.ReadLine());
+while (true)
+{
+    Console.WriteLine("\nMenu:");
+    Console.WriteLine("1. Add Crocodile");
+    Console.WriteLine("2. View Crocodiles");
+    Console.WriteLine("3. Exit");
+    Console.Write("Select an option: ");
+    int choice = int.Parse(Console.ReadLine());
 
-CrocodileCollection crocodileCollection = new CrocodileCollection();
-crocodileCollection.CollectNCrocodiles(n);
-crocodileCollection.DisplayNCrocodiles();
+    switch (choice)
+    {
+        case 1:
+            Console.Write("Enter the number of crocodiles to collect: ");
+            int n = int.Parse(Console.ReadLine());
+            List<Crocodile> newCrocodiles = processor.CollectNCrocodiles(n);
+            crocodiles.AddRange(newCrocodiles);
+            break;
+        case 2:
+            string details = processor.DisplayNCrocodiles(crocodiles);
+            Console.WriteLine(details);
+            break;
+        case 3:
+            return;
+        default:
+            Console.WriteLine("Invalid option. Please select a valid option.");
+            break;
+    }
+}
+ 
 class Crocodile
 {
     public int weight { get; set; }
@@ -57,6 +82,17 @@ class Crocodile
         Console.WriteLine($"Is Extinct: {isExtinct}");
         Console.WriteLine($"Extinct Status: {ExtinctStatus}");
         Console.WriteLine($"Lifespan: {Lifespan} years");
+    }
+
+    public string GetDetails()
+    {
+        return $"Species Name: {speciesname}\n" +
+               $"Scientific Name: {scientificname}\n" +
+               $"Weight: {weight} kg\n" +
+               $"Length: {length} feet\n" +
+               $"Is Extinct: {isExtinct}\n" +
+               $"Extinct Status: {ExtinctStatus}\n" +
+               $"Lifespan: {Lifespan} years\n";
     }
 
     public static Crocodile CollectCrocodileDetails()
@@ -91,12 +127,11 @@ class Crocodile
     }
 }
 
-class CrocodileCollection
+class CrocodileCollectionProcessor
 {
-    private List<Crocodile> crocodiles = new List<Crocodile>();
-
-    public void CollectNCrocodiles(int n)
+    public List<Crocodile> CollectNCrocodiles(int n)
     {
+        List<Crocodile> crocodiles = new List<Crocodile>();
         for (int i = 0; i < n; i++)
         {
             Console.WriteLine($"\nCollecting details for crocodile {i + 1}:");
@@ -108,19 +143,22 @@ class CrocodileCollection
             }
             crocodiles.Add(croc);
         }
+        return crocodiles;
     }
 
-    public void DisplayNCrocodiles()
+    public string DisplayNCrocodiles(List<Crocodile> crocodiles)
     {
         if (crocodiles == null || crocodiles.Count == 0)
         {
-            Console.WriteLine("No crocodiles to display.");
-            return;
+            return "No crocodiles to display.";
         }
+
+        string details = "";
         for (int i = 0; i < crocodiles.Count; i++)
         {
-            Console.WriteLine($"\nDetails of crocodile {i + 1}:");
-            crocodiles[i].DisplayDetails();
+            details += $"\nDetails of crocodile {i + 1}:\n";
+            details += crocodiles[i].GetDetails();
         }
+        return details;
     }
 }
