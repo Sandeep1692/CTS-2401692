@@ -1,0 +1,6 @@
+@BungieCordBlogWebAPI_HostAddress = http://localhost:5020
+
+GET {{BungieCordBlogWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
