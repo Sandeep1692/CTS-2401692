@@ -1,4 +1,64 @@
 ## Points: 50  
+## April 9,2025
+### Morning Session  
+
+1. **SQL Views, Stored Procedures, and Index**  
+    - Explored the creation and usage of SQL views for simplifying complex queries.  
+    - Practiced writing stored procedures for reusable database operations.  
+    - Learned about indexing strategies to optimize query performance.  
+
+2. **SQL Server Management Studio**  
+    - Continued exploring advanced tools and features for efficient database management.  
+    - Discussed best practices for database maintenance and troubleshooting.  
+
+3. **C# Daily Practice**  
+    - Continued daily programming tasks to strengthen C# proficiency.  
+    - Solved real-world problems to improve coding and debugging skills.  
+
+4. **GitHub and Project Management**  
+    - Collaborated on team projects with regular updates and version control.  
+    - Reviewed pull requests and refined strategies for effective project management.  
+
+---
+
+### Afternoon Session  
+
+1. **Udemy Course Progress**  
+    - Advanced through selected Udemy courses to deepen technical expertise.  
+    - Completed modules on advanced programming concepts and design patterns.  
+
+2. **TecStak Learning**  
+    - Utilized TecStak resources for skill enhancement and hands-on practice.  
+    - Reinforced newly acquired skills through targeted exercises.  
+
+3. **Doubt Clearing Session**  
+    - Addressed team queries and clarified complex concepts for better understanding.  
+    - Conducted peer discussions to collaboratively resolve challenging problems.  
+
+4. **Blogging Project Exploration**  
+    - Made significant progress on a blogging platform using **.NET** and **Angular**.  
+    - Implemented new features, enhanced UI/UX design, and improved code quality.  
+
+5. **Blazor Project Exploration**  
+    - Developed and tested features for a project using **.NET** and **Blazor**.  
+    - Focused on component-based architecture, state management, and performance optimization.  
+
+---
+
+### Useful Links for Today  
+
+1. [Practice MS SQL Database with DC Comics Characters](https://vijayasimhabr.medium.com/practice-ms-sql-database-with-dc-comics-characters-d2d8c68025e1)  
+    - Practice SQL with a fun and engaging DC Comics dataset.  
+
+2. [BungieCord Blog](https://jay-study-nildana.github.io/BungieCordBlog/)  
+    - Explore insightful tutorials and articles on various tech topics.  
+
+3. [SQL Fundamentals GitHub Repository](https://github.com/Jay-study-nildana/Azure-CSharp-Corp-Trainer-Syllabus/tree/main/SQLFundamentals)  
+    - Access comprehensive SQL learning resources and examples.  
+
+4. [Blazor for Students GitHub Repository](https://github.com/Jay-study-nildana/BlazorForStudents)  
+    - Learn Blazor development with beginner-friendly guides and projects.  
+
 ## April 8, 2025  
 
 ### Morning Session  
@@ -372,6 +432,229 @@
     - Explore pre-written SQL queries for the DC Comics dataset.  
 
 ---
+### Dependency Injection or Dependency Inversion  
+
+Dependency Injection (DI) is a design pattern that implements the Dependency Inversion Principle (DIP), one of the SOLID principles of object-oriented programming. It is a technique where an object receives its dependencies from an external source rather than creating them itself.  
+*Constructor Takes care of Dependency Injection*
+#### Key Concepts  
+
+1. **Dependency Inversion Principle (DIP)**  
+    - High-level modules should not depend on low-level modules. Both should depend on abstractions.  
+    - Abstractions should not depend on details. Details should depend on abstractions.  
+
+2. **Dependency Injection (DI)**  
+    - A way to achieve DIP by providing dependencies to a class from an external source.  
+    - Promotes loose coupling and enhances testability and maintainability.  
+
+#### Types of Dependency Injection  
+
+1. **Constructor Injection**  
+    - Dependencies are provided through a class constructor.  
+    - Example:  
+      ```csharp
+      public class Service
+      {
+          private readonly IRepository _repository;
+
+          public Service(IRepository repository)
+          {
+              _repository = repository;
+          }
+      }
+      ```
+
+2. **Property Injection**  
+    - Dependencies are set through public properties.  
+    - Example:  
+      ```csharp
+      public class Service
+      {
+          public IRepository Repository { get; set; }
+      }
+      ```
+
+3. **Method Injection**  
+    - Dependencies are passed as parameters to a method.  
+    - Example:  
+      ```csharp
+      public class Service
+      {
+          public void Execute(IRepository repository)
+          {
+              // Use repository
+          }
+      }
+      ```
+
+#### Benefits of Dependency Injection  
+
+- **Improved Testability**: Makes it easier to mock dependencies for unit testing.  
+- **Loose Coupling**: Reduces the dependency between classes, making the code more modular.  
+- **Flexibility**: Allows swapping implementations without modifying the dependent class.  
+- **Maintainability**: Simplifies code changes and reduces the risk of breaking existing functionality.  
+
+#### Example in .NET  
+
+Using a DI container like Microsoft.Extensions.DependencyInjection:  
+```csharp
+// Register services
+var services = new ServiceCollection();
+services.AddTransient<IRepository, Repository>();
+services.AddTransient<Service>();
+
+// Build service provider
+var serviceProvider = services.BuildServiceProvider();
+
+// Resolve dependencies
+var service = serviceProvider.GetService<Service>();
+```
+
+#### Best Practices  
+
+- Use interfaces to define dependencies.  
+- Avoid overusing property injection as it can lead to unclear dependencies.  
+- Prefer constructor injection for mandatory dependencies.  
+- Use a DI container to manage dependencies in larger applications.  
+
+For more information, refer to the [Microsoft Dependency Injection Documentation](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection).  
+### Using Entity Framework Instead of SQL  
+
+Entity Framework (EF) is an Object-Relational Mapper (ORM) that allows developers to work with a database using .NET objects, eliminating the need for most SQL queries. It simplifies data access by providing a higher-level abstraction over database operations.  
+
+#### Key Features of Entity Framework  
+
+1. **Code-First Approach**  
+    - Define your database schema using C# classes.  
+    - EF automatically generates the database based on your model.  
+
+2. **Database-First Approach**  
+    - Generate C# classes from an existing database schema.  
+    - Useful for integrating with legacy databases.  
+
+3. **Querying with LINQ**  
+    - Use LINQ (Language Integrated Query) to query the database in a strongly-typed manner.  
+    - Example:  
+      ```csharp
+      var superheroes = context.Superheroes
+                               .Where(s => s.FirstAppearance.Year > 1950)
+                               .ToList();
+      ```
+
+4. **Change Tracking**  
+    - EF automatically tracks changes to entities and updates the database accordingly.  
+
+5. **Migrations**  
+    - Manage database schema changes using EF migrations.  
+    - Example commands:  
+      ```bash
+      Add-Migration InitialCreate
+      Update-Database
+      ```
+
+#### Example: Replacing SQL with Entity Framework  
+
+Instead of writing raw SQL queries, you can use EF to perform CRUD operations.  
+
+**Model Definition**  
+```csharp
+public class Superhero
+{
+    public int SuperheroID { get; set; }
+    public string Name { get; set; }
+    public string Alias { get; set; }
+    public DateTime FirstAppearance { get; set; }
+    public string Publisher { get; set; } = "DC Comics";
+}
+```
+
+**DbContext Configuration**  
+```csharp
+public class ComicsContext : DbContext
+{
+    public DbSet<Superhero> Superheroes { get; set; }
+    public DbSet<Villain> Villains { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("YourConnectionStringHere");
+    }
+}
+```
+
+**Adding Data**  
+```csharp
+using (var context = new ComicsContext())
+{
+    var superhero = new Superhero
+    {
+        Name = "Clark Kent",
+        Alias = "Superman",
+        FirstAppearance = new DateTime(1938, 6, 1)
+    };
+
+    context.Superheroes.Add(superhero);
+    context.SaveChanges();
+}
+```
+
+**Querying Data**  
+```csharp
+using (var context = new ComicsContext())
+{
+    var superheroes = context.Superheroes
+                             .Where(s => s.Publisher == "DC Comics")
+                             .ToList();
+
+    foreach (var hero in superheroes)
+    {
+        Console.WriteLine($"{hero.Name} ({hero.Alias})");
+    }
+}
+```
+
+**Updating Data**  
+```csharp
+using (var context = new ComicsContext())
+{
+    var superhero = context.Superheroes.FirstOrDefault(s => s.Name == "Clark Kent");
+    if (superhero != null)
+    {
+        superhero.Alias = "Man of Steel";
+        context.SaveChanges();
+    }
+}
+```
+
+**Deleting Data**  
+```csharp
+using (var context = new ComicsContext())
+{
+    var superhero = context.Superheroes.FirstOrDefault(s => s.Name == "Clark Kent");
+    if (superhero != null)
+    {
+        context.Superheroes.Remove(superhero);
+        context.SaveChanges();
+    }
+}
+```
+
+#### Benefits of Using Entity Framework  
+
+- **Productivity**: Reduces boilerplate code for database operations.  
+- **Maintainability**: Centralized data access logic makes the code easier to maintain.  
+- **Portability**: Abstracts database-specific details, making it easier to switch databases.  
+- **Testability**: Simplifies mocking and testing of data access layers.  
+
+For more information, refer to the [Microsoft Entity Framework Documentation](https://learn.microsoft.com/en-us/ef/).  
+### Domain and DTO Usage  
+
+#### Domain  
+The **Domain** layer is primarily used for database-related operations. It represents the core business logic and entities of the application. This layer is responsible for defining the structure of the data and ensuring that it aligns with the database schema.  
+
+#### DTO (Data Transfer Object)  
+The **DTO** is used for **Swagger** and other API-related operations. It acts as a bridge between the API and the domain layer, ensuring that only the necessary data is exposed to the client. DTOs help in maintaining a clear separation of concerns and improve security by preventing over-posting or exposing sensitive data.  
+
+---  
 
 ## April 7, 2025  
 
