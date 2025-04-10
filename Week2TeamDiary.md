@@ -1,4 +1,4 @@
-## Points: 50  
+## Points: 76  
 ## April 9,2025
 ### Morning Session  
 
@@ -58,6 +58,75 @@
 
 4. [Blazor for Students GitHub Repository](https://github.com/Jay-study-nildana/BlazorForStudents)  
     - Learn Blazor development with beginner-friendly guides and projects.  
+## Steps  
+
+### Include Packages  
+Add the following package references to your project file:  
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.12" />
+```
+### Install Packages from NuGet Package Manager  
+1. Open the **NuGet Package Manager** in Visual Studio.  
+2. Search for the required packages and select the correct version.  
+3. Install the following packages:  
+    - `Microsoft.EntityFrameworkCore.SqlServer`  
+    - `Microsoft.EntityFrameworkCore.Tools`  
+
+### Create a Class in Models >> Domain  
+1. Navigate to the `Models` folder in your project.  
+2. Create a new folder named `Domain`.  
+3. Add a new class file to the `Domain` folder to define your domain model.  
+
+### Create ApplicationDbContext for the Model  
+1. Add a new class named `ApplicationDbContext` in your project.  
+2. Inherit from `DbContext` and configure the model.  
+    
+3. Update the `Program.cs` file to register the `ApplicationDbContext` in the dependency injection container.  
+    - Example:  
+      ```csharp
+      services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      ```
+### Define Connection String in `appsettings.json`
+
+To configure the connection string for your database, add the following entry in the `appsettings.json` file:
+
+```json
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=LTIN618032;Database=BungieCordBlogDB;TrustServerCertificate=True;User Id=admin;Password=<ENCRYPTED_PASSWORD>;"
+    }
+}
+```
+
+> **Note:** Replace `<ENCRYPTED_PASSWORD>` with the actual encrypted password or use a secure method to retrieve it at runtime.
+
+```
+### Connection String  
+Use the following connection string to configure your database:  
+```plaintext
+Server=LTIN618032;Database=BungieCordBlogDB;TrustServerCertificate=True;User Id=admin;Password=<ENCRYPTED_PASSWORD>;
+```
+
+> **Note:** Replace `<ENCRYPTED_PASSWORD>` with the actual encrypted password or use a secure method to retrieve it at runtime.
+
+```markdown
+### Add Migration
+
+In the **Package Manager Console**, type the following command to create the initial migration:
+
+```bash
+Add-Migration FirstMigration
+```
+
+> **Note:** Ensure that the `ApplicationDbContext` is correctly configured before running the migration command.
+```
+Run the following command in the **Package Manager Console** to apply the latest migrations to the database:
+
+```bash
+Update-Database
+```
 
 ## April 8, 2025  
 
@@ -853,3 +922,5 @@ npm run start
 ---
 
 > **Note:** Regularly review and update the TODO list to align with project goals and timelines.
+
+
