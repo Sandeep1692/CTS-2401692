@@ -1,4 +1,61 @@
-## Points: 76  
+## Points: 81  
+## April 10, 2025
+
+### Morning Session
+
+1. **Angular Versions**: Discussion on Angular 16 and Angular 19.
+2. **SQL Topics**: Views, Stored Procedures, and Index.
+3. **Tools**: SQL Server Management Studio.
+4. **Entity Framework**: Domain Models and CRUD Endpoints.
+5. **C# Practice**: Ongoing daily sessions.
+6. **GitHub & Project Management**: Regular daily activities.
+
+### Afternoon Session
+
+1. **Udemy**: Usual course activities.
+2. **TecStak**: Regular tasks.
+3. **Doubt Clearing**: Addressing questions and clarifications.
+4. **Blogging Project**: Exploring .NET and Angular integration.
+5. **Blazor Project**: Exploring .NET and Blazor integration.
+
+### Links for Today
+
+- [Practice MS SQL Database with DC Comics Characters](https://vijayasimhabr.medium.com/practice-ms-sql-database-with-dc-comics-characters-d2d8c68025e1)
+- [BungieCord Blog](https://jay-study-nildana.github.io/BungieCordBlog/)
+- [SQL Fundamentals GitHub Repository](https://github.com/Jay-study-nildana/Azure-CSharp-Corp-Trainer-Syllabus/tree/main/SQLFundamentals)
+- [Blazor for Students GitHub Repository](https://github.com/Jay-study-nildana/BlazorForStudents)
+
+## Steps to Build the Project
+
+### 1. Connection String
+Set up the connection string for your project.
+
+### 2. Reference Project Types
+There are two types of reference projects:
+    - **Jay Sir Project**
+    - **Own Project**
+
+### 3. Idea for Building
+Define the core idea or purpose of the project.
+
+### 4. Information to Store
+From the idea, identify the different types of information you want to store. Create a list of these items.
+
+### 5. Classes from Information
+From the list of items, derive a list of classes that represent the information.
+
+### 6. Properties for Each Class
+For each class, create a list of properties that define its structure.
+
+### 7. Controllers and Their Names
+Make a list of controllers and assign names to them.
+> **Note:** Typically, each class has a corresponding controller (one-to-one mapping).
+
+### 8. CRUD Function Names
+Start writing the CRUD (Create, Read, Update, Delete) function names for each controller.
+> **Note:** Each function will also serve as an endpoint.
+
+
 ## April 9,2025
 ### Morning Session  
 
