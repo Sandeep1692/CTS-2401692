@@ -1,0 +1,6 @@
+@CineConnectAPI_HostAddress = http://localhost:5050
+
+GET {{CineConnectAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

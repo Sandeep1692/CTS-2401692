@@ -29,6 +29,25 @@
 
 ### 1. Connection String
 Set up the connection string for your project.
+```json
+{
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=LTIN618032;Database=BungieCordBlogDB;TrustServerCertificate=True;User Id=admin;Password=<ENCRYPTED_PASSWORD>;"
+    }
+}
+```
+**For Windows Authentication:**
+```plaintext
+Server=LTIN603897\SQLEXPRESS;Database=EFCorehelloworldarpril1025;Trusted_Connection=True;TrustServerCertificate=True;
+```
+
+**Required Packages:**
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.12" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.12" />
+```
+
+
 
 ### 2. Reference Project Types
 There are two types of reference projects:
@@ -54,6 +73,89 @@ Make a list of controllers and assign names to them.
 ### 8. CRUD Function Names
 Start writing the CRUD (Create, Read, Update, Delete) function names for each controller.
 > **Note:** Each function will also serve as an endpoint.
+
+## Project Building: CineConnectAPI
+## All Classes and Attributes
+### 1. Theater
+**Attributes:**
+- `theaterId`: Unique identifier for the theater.
+- `name`: Name of the theater.
+- `location`: Address or city of the theater.
+- `screens`: List of screens in the theater.
+- `contactNumber`: Contact number for the theater management.
+
+### 2. Screen
+**Attributes:**
+- `screenId`: Unique identifier for the screen.
+- `theaterId`: The theater to which this screen belongs.
+- `name`: Name/identifier for the screen (e.g., Screen 1, Screen 2).
+- `totalSeats`: Total number of seats in the screen.
+- `seatLayout`: Layout of seats (e.g., rows and columns).
+
+### 3. Movie
+**Attributes:**
+- `movieId`: Unique identifier for the movie.
+- `title`: Name of the movie.
+- `duration`: Duration of the movie (in minutes).
+- `language`: Language of the movie.
+- `genre`: Genre of the movie (e.g., Action, Drama).
+
+### 4. Show
+**Attributes:**
+- `showId`: Unique identifier for the show.
+- `movieId`: The movie being shown.
+- `screenId`: The screen where the show is scheduled.
+- `startTime`: Start time of the show.
+- `endTime`: End time of the show.
+
+### 5. Seat
+**Attributes:**
+- `seatId`: Unique identifier for the seat.
+- `screenId`: The screen to which this seat belongs.
+- `row`: Row number of the seat.
+- `column`: Column number of the seat.
+- `type`: Type of seat (e.g., Regular, Premium, VIP).
+
+### 6. Booking
+**Attributes:**
+- `bookingId`: Unique identifier for the booking.
+- `userId`: The user who made the booking.
+- `showId`: The show for which the booking is made.
+- `seatsBooked`: List of seat IDs booked.
+- `totalPrice`: Total price of the booking.
+
+### 7. User
+**Attributes:**
+- `userId`: Unique identifier for the user.
+- `name`: Name of the user.
+- `email`: Email address of the user.
+- `phoneNumber`: Contact number of the user.
+- `bookings`: List of bookings made by the user.
+
+### 8. Ticket
+**Attributes:**
+- `ticketId`: Unique identifier for the ticket.
+- `bookingId`: The booking associated with the ticket.
+- `seatId`: The seat associated with the ticket.
+- `qrCode`: QR code for ticket verification.
+- `price`: Price of the ticket.
+
+### 9. Payment
+**Attributes:**
+- `paymentId`: Unique identifier for the payment.
+- `bookingId`: The booking associated with the payment.
+- `transactionDate`: Date and time of the payment.
+- `amount`: Amount paid.
+- `paymentStatus`: Status of the payment (e.g., Successful, Failed).
+
+### 10. AvailabilityService (Utility class)
+**Attributes:**
+- `serviceId`: Unique identifier for the service.
+- `showId`: Show for which availability is being checked.
+- `reservedSeats`: List of reserved seats.
+- `availableSeats`: Number of seats available.
+- `status`: Status of service execution (e.g., Success, Failure).
+
 
 
 ## April 9,2025
