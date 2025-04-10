@@ -31,5 +31,16 @@ namespace CineConnectAPI.Controllers
             var response = await dbContext.Theatres.ToListAsync();
             return Ok(response);
         }
+        [HttpGet]
+        [Route("GetTheaterById/{id}")]
+        public async Task<IActionResult> GetTheaterById(int id)
+        {
+            var response = await dbContext.Theatres.FirstOrDefaultAsync(x => x.TheatreId == id);
+            if (response == null)
+            {
+                return NotFound();
+            }
+            return Ok(response);
+        }
     }
 }
