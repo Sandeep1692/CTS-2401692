@@ -38,9 +38,38 @@ namespace CineConnectAPI.Controllers
             var response = await dbContext.Theatres.FirstOrDefaultAsync(x => x.TheatreId == id);
             if (response == null)
             {
-                return NotFound();
+                return NotFound($"Theatre with Id {id} is not found");
             }
             return Ok(response);
+        }
+        [HttpPut]
+        [Route("UpdateTheatre/{id}")]
+        public async Task<IActionResult> UpdateTheatre(int id, [FromBody] Theatre updateTheatre)
+        {
+            var existingTheatre = await dbContext.Theatres.FirstOrDefaultAsync(x => x.TheatreId == id);
+            if (existingTheatre == null)
+            {
+                return NotFound($"Theatre with Id {id} is not found");
+            }
+            existingTheatre.Name = updateTheatre.Name;
+            existingTheatre.Location = updateTheatre.Location;
+            existingTheatre.Screens = updateTheatre.Screens;
+            existingTheatre.ContactNumber = updateTheatre.ContactNumber;
+            await dbContext.SaveChangesAsync();
+            return Ok(existingTheatre);
+        }
+        [HttpDelete]
+        [Route("DeleteTheatre/{id}")]
+        public async Task<IActionResult> DeleteTheatre(int id)
+        {
+            var existingTheatre = await dbContext.Theatres.FirstOrDefaultAsync(x => x.TheatreId == id);
+            if (existingTheatre == null)
+            {
+                return NotFound($"Theatre with Id {id} is not found");
+            }
+            dbContext.Theatres.Remove(existingTheatre);
+            await dbContext.SaveChangesAsync();
+            return Ok(existingTheatre);
         }
     }
 }
