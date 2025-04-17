@@ -146,3 +146,15 @@
 - Display a confirmation message after an email is sent successfully.
 - Allow users to download e-tickets and bills directly from their booking details page.
 
+
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Newtonsoft.Json
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet add package Microsoft.AspNetCore.SignalR
+dotnet add package Microsoft.AspNetCore.SignalR.Client
+dotnet add package Stripe.net
+dotnet add package SendGrid
+dotnet add package DinkToPdf
+dotnet add package Serilog
+dotnet add package Serilog.AspNetCore
